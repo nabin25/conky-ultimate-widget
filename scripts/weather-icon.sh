@@ -56,9 +56,9 @@ esac
 cp -r $SCRIPT_DIR/.././weather-icon/${icon} ~/.cache/weather-icon.png
 
 case $weather_code1 in
-    113) icon=$([[ $is_day == true ]] && echo "clear_day.png" || echo "clear_night.png") ;;
-    116) icon=$([[ $is_day == true ]] && echo "partly_cloudy_day.png" || echo "partly_cloudy_night.png") ;;
-    176|293|185|263|281) icon=$([[ $is_day == true ]] && echo "light_rain_day.png" || echo "light_rain_night.png") ;;
+    113) icon="clear_day.png" ;;
+    116) icon="partly_cloudy_day.png";;
+    176|293|185|263|281) icon="light_rain_day.png" ;;
     119|122) icon="cloudy.png" ;;
     200|386|389|392|395) icon="thunderstorm.png" ;;
     248|260|143) icon="fog.png" ;;
@@ -69,9 +69,9 @@ esac
 cp -r $SCRIPT_DIR/../weather-icon/${icon} ~/.cache/weather-icon1.png
 
 case $weather_code2 in
-    113) icon=$([[ $is_day == true ]] && echo "clear_day.png" || echo "clear_night.png") ;;
-    116) icon=$([[ $is_day == true ]] && echo "partly_cloudy_day.png" || echo "partly_cloudy_night.png") ;;
-    176|293|185|263|281) icon=$([[ $is_day == true ]] && echo "light_rain_day.png" || echo "light_rain_night.png") ;;
+    113) icon="clear_day.png" ;;
+    116) icon="partly_cloudy_day.png";;
+    176|293|185|263|281) icon="light_rain_day.png" ;;
     119|122) icon="cloudy.png" ;;
     200|386|389|392|395) icon="thunderstorm.png" ;;
     248|260|143) icon="fog.png" ;;
