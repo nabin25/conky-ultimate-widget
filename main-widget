@@ -28,7 +28,6 @@ color3 ff8400
 own_window_argb_visual yes
 own_window_colour 000000
 own_window_argb_value 0
-lua_load ./scripts/battery_progress.lua
 
 TEXT
 ${goto 210}${color0}${font Zekton:style=bold:size=13}${voffset 40}${exec whoami}
@@ -50,7 +49,6 @@ ${font Zekton:style=Bold:size=10}${goto 50}machine${goto 130}${machine}
 ${color Tan1}RAM ${alignr}$color${exec free -m | awk '/^Mem/ {print $3}'} MB / ${exec free -m | awk '/^Mem/ {print $2}'} MB   
 ${execpi 1 ./scripts/ram_usage.sh}
 ${execpi 10 ./scripts/battery_level.sh}
-${lua conky_battery_progress}
 
 ${font Zekton:size=10:bold}${color Tan1}Network ${color White}${hr 3}
 ${font DejaVu Sans:size=12}↓${font} ${downspeedf wlo1} KB/s ${alignr}${font DejaVu Sans:size=12}↑${font} ${upspeedf wlo1} KB/s
@@ -63,7 +61,7 @@ ${font Zekton:size=9}${top name 3} ${alignr}${top cpu 3}%
 ${font Chinacat NF:size=15}${color Tan1} ${font Chinacat:bold:size=11}${color Tan1}WEATHER ${color White}${hr 3}
 
 ${color Green}${font Chinacat:bold:size=13}${time %A}
-${color1}${font Chinacat:size=12}${execpi 1000 ~/.conky/victorConky/scripts/weather-icon.sh}
+${color1}${font Chinacat:size=12}${execpi 1000 ./scripts/weather-icon.sh}
 ${color White}${hr 3}
 ${image ~/.cache/weather-icon.png -p 200,800 -s 100x100}
 ${image ./widget_image.png -p 10,0}

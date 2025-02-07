@@ -3,6 +3,8 @@
 # Fetch weather data in JSON format
 weather_data=$(curl -s "https://wttr.in/Thankot?format=j1")
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 tomorrow_day=$(date -d "tomorrow" "+%A")
 day_after_tomorrow=$(date -d "+2 days" "+%A")
 
@@ -51,7 +53,7 @@ case $weather_code in
     179|182|311|227|230|320|323|326|329|332|335|338|350|368|371|374|377|179|320|362|365) icon="snow.png" ;;
     *) icon="unknown.png" ;;
 esac
-cp -r ../weather-icon/${icon} ~/.cache/weather_icon1.png
+cp -r $SCRIPT_DIR/.././weather-icon/${icon} ~/.cache/weather-icon.png
 
 case $weather_code1 in
     113) icon=$([[ $is_day == true ]] && echo "clear_day.png" || echo "clear_night.png") ;;
@@ -64,7 +66,7 @@ case $weather_code1 in
     179|182|311|227|230|320|323|326|329|332|335|338|350|368|371|374|377|179|320|362|365) icon="snow.png" ;;
     *) icon="unknown.png" ;;
 esac
-cp -r ../weather-icon/${icon} ~/.cache/weather_icon1.png
+cp -r $SCRIPT_DIR/../weather-icon/${icon} ~/.cache/weather-icon1.png
 
 case $weather_code2 in
     113) icon=$([[ $is_day == true ]] && echo "clear_day.png" || echo "clear_night.png") ;;
@@ -77,7 +79,7 @@ case $weather_code2 in
     179|182|311|227|230|320|323|326|329|332|335|338|350|368|371|374|377|179|320|362|365) icon="snow.png" ;;
     *) icon="unknown.png" ;;
 esac
-cp -r ../weather-icon/${icon} ~/.cache/weather_icon2.png
+cp -r $SCRIPT_DIR/../weather-icon/${icon} ~/.cache/weather-icon2.png
 
 # Output the weather info and icon path
 echo "$location"
