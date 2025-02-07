@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fetch weather data in JSON format
-weather_data=$(curl -s "https://wttr.in/Thankot?format=j1")
+weather_data=$(curl -s "https://wttr.in/Kathmandu?format=j1")
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
